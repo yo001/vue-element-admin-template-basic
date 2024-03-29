@@ -42,7 +42,7 @@ export default {
   setup: () => {
     return () => h(resolveComponent('ElMenu'), {
       router: true,
-      defaultActive: window.location.pathname,
+      defaultActive: window.location.pathname.replace(import.meta.env.BASE_URL, ''),
     }, () => renderNav(nav))
   },
 }
