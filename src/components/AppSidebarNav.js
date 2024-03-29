@@ -1,13 +1,11 @@
 import { h, resolveComponent } from 'vue'
 import nav from '@/_nav.js'
 
-console.log(window.location)
-
 function renderNav(nav) {
   return nav.map((item) => {
     // div
     if (item.component === 'div')
-      return h('div', item.name)
+      return h('div', { class: item.className || '' }, item.name)
 
     const Component = resolveComponent(item.component)
     const children = []
@@ -18,12 +16,12 @@ function renderNav(nav) {
       children.push(...subItems)
       return h(Component, { index: item.to }, {
         default: () => children,
-        title: () => [h('div', [item.icon ? h(resolveComponent(item.icon)) : null, h('span', item.name)])],
+        title: () => [h('div', [item.icon ? h(resolveComponent(item.icon), { size: 20 }) : null, h('span', item.name)])],
       })
     }
     else {
       // menu-item
-      children.push(h('div', [item.icon ? h(resolveComponent(item.icon)) : null, h('span', item.name)]))
+      children.push(h('div', [item.icon ? h(resolveComponent(item.icon), { size: 20 }) : null, h('span', item.name)]))
       if (item.badge) {
         const Badge = resolveComponent('ElTag')
         children.push(h(Badge, { type: item.badge.color, round: true }, () => item.badge.text))

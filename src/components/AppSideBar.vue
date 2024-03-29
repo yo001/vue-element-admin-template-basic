@@ -23,6 +23,9 @@ import AppSidebarNav from '@/components/AppSidebarNav.js'
   border-right: solid 1px var(--el-menu-border-color);
   :deep(.el-menu) {
     border-right: none;
+    .sidebar-title {
+      padding-left: 1rem;
+    }
     .el-menu-item {
       align-items: center;
       justify-content: space-between;
@@ -32,6 +35,8 @@ import AppSidebarNav from '@/components/AppSidebarNav.js'
     display: flex;
     justify-content: center;
     height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     img {
       height: 100%;
     }

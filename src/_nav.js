@@ -1,12 +1,13 @@
 export default [
   {
     component: 'div',
-    name: 'Theme',
+    name: 'Main',
+    className: 'sidebar-title',
   },
   {
     component: 'ElMenuItem',
     name: 'Dashboard',
-    to: '/',
+    to: '/dashboard',
     className: 'dashboard',
     icon: 'IconDashboard',
     badge: {
@@ -15,8 +16,20 @@ export default [
     },
   },
   {
+    component: 'ElMenuItem',
+    name: 'About',
+    to: '/About',
+    className: 'About',
+    icon: 'IconInfo',
+    badge: {
+      color: 'warning',
+      text: 'NEW',
+    },
+  },
+  {
     component: 'div',
     name: 'Extras',
+    className: 'sidebar-title',
   },
   {
     component: 'ElSubMenu',
@@ -24,16 +37,16 @@ export default [
     to: '/pages',
     icon: 'IconPages',
     items: [
-      {
-        component: 'ElMenuItem',
-        name: 'Login',
-        to: '/pages/login',
-      },
-      {
-        component: 'ElMenuItem',
-        name: 'Register',
-        to: '/pages/register',
-      },
+      // {
+      //   component: 'ElMenuItem',
+      //   name: 'Login',
+      //   to: '/pages/login',
+      // },
+      // {
+      //   component: 'ElMenuItem',
+      //   name: 'Register',
+      //   to: '/pages/register',
+      // },
       {
         component: 'ElMenuItem',
         name: 'Error 404',

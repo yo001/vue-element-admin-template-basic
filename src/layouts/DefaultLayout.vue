@@ -1,9 +1,17 @@
 <script setup>
+import { useWindowSize } from '@vueuse/core'
+import { watch } from 'vue'
 import AppSideBar from '@/components/AppSideBar.vue'
 import AppHeader from '@/components/AppHeader.vue'
 import { useDefaultStore } from '@/stores/default'
 
 const defaultStore = useDefaultStore()
+
+const { width: windowWidth } = useWindowSize()
+watch(windowWidth, (val) => {
+  if (val < 768)
+    defaultStore.sidebarVisible = false
+})
 </script>
 
 <template>
@@ -22,12 +30,6 @@ const defaultStore = useDefaultStore()
         <AppHeader />
       </el-header>
       <el-main>
-        <div
-          v-for="m in 500"
-          :key="m"
-        >
-          {{ m }}
-        </div>
         <RouterView />
       </el-main>
     </el-container>

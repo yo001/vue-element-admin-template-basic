@@ -2,6 +2,13 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+## Use Tools
+
+1. [Vue](https://vuejs.org/)
+2. [Vite](https://vitejs.dev/)
+3. [VueUse](https://vueuse.org/)
+4. [Element Plus](https://element-plus.org/en-US/)
+
 ## Use [@antfu/eslint-config](https://github.com/antfu/eslint-config) for ESLint
 
 Recommend to use node 18.18+
@@ -52,10 +59,6 @@ Recommend to use node 18.18+
   ]
 }
 ```
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
 ## Customize configuration
 
