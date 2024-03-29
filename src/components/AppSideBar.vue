@@ -1,5 +1,5 @@
 <script setup>
-import AppSidebarNav from '@/components/AppSidebarNav.vue'
+import AppSidebarNav from '@/components/AppSidebarNav.js'
 </script>
 
 <template>
@@ -23,6 +23,10 @@ import AppSidebarNav from '@/components/AppSidebarNav.vue'
   border-right: solid 1px var(--el-menu-border-color);
   :deep(.el-menu) {
     border-right: none;
+    .el-menu-item {
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   .logo {
     display: flex;

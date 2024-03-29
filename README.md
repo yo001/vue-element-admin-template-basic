@@ -40,9 +40,6 @@ Recommend to use node 18.18+
   // Enable eslint for all supported languages
   "eslint.validate": [
     "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
     "vue",
     "html",
     "markdown",

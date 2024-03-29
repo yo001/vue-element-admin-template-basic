@@ -38,5 +38,12 @@ export default antfu({
   },
   rules: {
     'no-console': 'warn',
+    'vue/block-order': ['error', {
+      order: ['script', 'template', 'style'],
+    }],
+    'vue/max-attributes-per-line': ['error', {
+      singleline: 1,
+      multiline: 1,
+    }],
   },
 })

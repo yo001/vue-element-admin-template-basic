@@ -1,5 +1,4 @@
 <script setup>
-import IconMenu from '@/components/icons/IconMenu.vue'
 import AppBreadcrumb from '@/components/AppBreadcrumb.vue'
 import { useDefaultStore } from '@/stores/default'
 
@@ -9,13 +8,12 @@ const defaultStore = useDefaultStore()
 <template>
   <el-row class="app-header">
     <el-col class="header-col">
-      <el-icon
-        :size="24"
+      <div
         class="header-icon"
         @click="defaultStore.toggleSidebar"
       >
-        <IconMenu />
-      </el-icon>
+        <IconMenu :size="24" />
+      </div>
     </el-col>
 
     <el-divider class="header-divider" />
