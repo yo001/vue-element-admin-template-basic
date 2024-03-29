@@ -6,6 +6,6 @@
 
 <style lang="scss" scoped>
 .app-breadcrumb {
-    line-height: 24px;
+  line-height: 24px;
 }
 </style>
