@@ -1,6 +1,6 @@
 <script setup>
-import { useWindowSize } from '@vueuse/core'
-import { watch } from 'vue'
+import { onClickOutside, useWindowSize } from '@vueuse/core'
+import { ref, watch } from 'vue'
 import AppSideBar from '@/components/AppSideBar.vue'
 import AppHeader from '@/components/AppHeader.vue'
 import { useDefaultStore } from '@/stores/default'
@@ -12,11 +12,18 @@ watch(windowWidth, (val) => {
   if (val < 768)
     defaultStore.sidebarVisible = false
 })
+
+const sidebarRef = ref(null)
+onClickOutside(sidebarRef, () => {
+  if (windowWidth.value < 768)
+    defaultStore.sidebarVisible = false
+})
 </script>
 
 <template>
   <el-container class="default-layout">
     <el-aside
+      ref="sidebarRef"
       class="default-layout-sidebar"
       :class="{ 'sidebar-hide': !defaultStore.sidebarVisible }"
     >
@@ -44,7 +51,7 @@ watch(windowWidth, (val) => {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 101;
     width: var(--app-sidebar-width);
     height: 100vh;
     transition: margin-left 0.3s;
@@ -56,6 +63,9 @@ watch(windowWidth, (val) => {
   .default-layout-container {
     margin-left: 250px;
     transition: margin-left 0.3s;
+    @media screen and (max-width: 768px) {
+      margin-left: 0;
+    }
   }
   .container-expand {
     margin-left: 0;
